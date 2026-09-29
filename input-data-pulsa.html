@@ -1,0 +1,1632 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Up Pulsa</title>
+    <link rel="stylesheet" href="./assets/css/output.css" />
+  </head>
+  <body class="text-hitam">
+    <header>
+      <nav
+        class="flex items-center py-4 justify-between border-black/20 border-b px-6 sm:px-20 md:px-32 lg:px-20 xl:px-40 2xl:px-60"
+      >
+        <button
+          onclick="window.history.back()"
+          type="button"
+          class="flex items-center gap-3 font-medium cursor-pointer duration-200"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            fill="currentColor"
+            class="bi bi-arrow-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+            />
+          </svg>
+          <span>Kembali</span>
+        </button>
+        <div class="flex font-medium items-center gap-3 cursor-pointer">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-question-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"
+            />
+            <path
+              d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"
+            />
+          </svg>
+          Bantuan
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- SECTION INPUT NOMOR -->
+      <section
+        class="px-6 sm:px-20 md:px-32 lg:px-20 xl:px-40 2xl:px-60 py-10 flex items-stretch gap-10"
+      >
+        <!-- BAGIAN KIRI -->
+        <div class="flex flex-col w-full">
+          <div class="mb-6 flex flex-col gap-1">
+            <h2 class="text-lg font-semibold">Nomor Tujuan</h2>
+            <span class="text-[#6c6c6c] mb-2"
+              >Masukkan nomor tujuan yang ingin diisi.</span
+            >
+            <div class="input-gradient-wrapper">
+              <input
+                id="nomor-tujuan"
+                type="text"
+                inputmode="numeric"
+                placeholder="Masukkan Nomor Tujuan"
+                class="w-full px-4 text-sm py-2.5 outline-none"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+              />
+            </div>
+          </div>
+          <div class="border border-black/20 rounded-2xl flex-1 flex flex-col">
+            <div
+              class="px-4 lg:px-6 py-3 rounded-t-2xl bg-gray-100 flex flex-col md:flex-row items-start md:items-center justify-between"
+            >
+              <span class="font-semibold">Nominal Top Up</span
+              ><span class="text-[#6c6c6c] text-sm"
+                >Pilih nominal top up yang ingin kamu isi</span
+              >
+            </div>
+
+            <div
+              id="nominal-warning"
+              class="flex-1 p-4 lg:p-6 flex items-center justify-center text-base text-[#6c6c6c] text-center"
+            >
+              Silahkan masukkan nomor terlebih dahulu
+            </div>
+            <div
+              id="nominal-grid"
+              class="p-4 lg:p-6 grid grid-cols-3 text-center md:grid-cols-4 gap-3 hidden"
+            >
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="10000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 10.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="15000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 15.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="20000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 20.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="25000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 25.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="30000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 30.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="40000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 40.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="50000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 50.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="60000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 60.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="70000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 70.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="75000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 75.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="80000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 80.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="90000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 90.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="100000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 100.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="150000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 150.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="200000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 200.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+
+              <div
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[60px] flex justify-center items-center rounded-2xl cursor-pointer"
+                data-amount="300000"
+              >
+                <span class="wallet-text font-medium text-[#6c6c6c] text-sm">
+                  Rp. 300.000
+                </span>
+
+                <span class="gradient-badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-check"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425z"
+                    />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BAGIAN KANAN -->
+        <div
+          class="hidden sticky top-10 self-start lg:flex flex-col gap-2 lg:max-w-[350px] xl:max-w-[400px] 2xl:max-w-[500px] w-full"
+        >
+          <div
+            class="border border-black/20 p-6 rounded-2xl h-full flex flex-col"
+          >
+            <h2 class="text-lg font-semibold">Ringkasan Transaksi</h2>
+            <div class="border border-black/10 mt-4 mb-6"></div>
+
+            <div
+              class="flex h-10 w-full shrink-0 items-center justify-between mb-3"
+            >
+              <div class="flex items-center gap-2">
+                <!-- icon pulsa -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  class="h-10 w-10 shrink-0"
+                >
+                  <defs>
+                    <linearGradient
+                      id="phoneGradient"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stop-color="#5FB5B7" />
+                      <stop offset="100%" stop-color="#0088CE" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill="url(#phoneGradient)"
+                    d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                  />
+                  <path
+                    fill="url(#phoneGradient)"
+                    d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"
+                  />
+                </svg>
+                <span class="text-sm text-[#6c6c6c]">Pulsa</span>
+              </div>
+              <img
+                id="logo-provider"
+                class="h-full w-fit shrink-0 object-contain hidden"
+                src="/assets/images/Logo-XL.svg"
+                alt="Logo XL"
+              />
+            </div>
+
+            <div class="flex justify-between text-sm mt-3">
+              <span class="text-sm text-[#6c6c6c]">Layanan</span>
+              <span id="service-nama" class="font-medium"></span>
+            </div>
+
+            <div
+              id="nama-provider"
+              class="flex justify-between text-sm mt-3 hidden"
+            >
+              <span class="text-sm text-[#6c6c6c]">Provider</span>
+              <span class="font-medium">XL</span>
+            </div>
+
+            <div class="flex justify-between mt-3 text-sm">
+              <span class="text-sm text-[#6c6c6c]">Nomor Tujuan</span>
+              <span id="detail-nomor" class="font-medium">-</span>
+            </div>
+            <div class="flex justify-between mt-3 text-sm">
+              <span class="text-sm text-[#6c6c6c]">Nominal</span>
+              <span id="detail-nominal" class="font-medium">-</span>
+            </div>
+
+            <div class="mt-auto">
+              <div class="border border-black/10 my-4"></div>
+              <a
+                href="metode-pembayaran.html"
+                id="btn-lanjut"
+                data-active="false"
+                aria-disabled="true"
+                tabindex="-1"
+                class="w-full flex justify-center items-center px-6 py-3 rounded-xl font-medium bg-gray-200 text-gray-400 cursor-not-allowed hover:-translate-y-0.5 hover:shadow-md duration-200 data-[active=true]:bg-linear-to-r data-[active=true]:from-biru data-[active=true]:to-hijau data-[active=true]:text-white data-[active=true]:cursor-pointer data-[active=false]:pointer-events-none"
+              >
+                Pilih Metode Pembayaran
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BUTTON FIXED BAWAH MOBILE -->
+        <div
+          id="mobile-summary-bar"
+          class="lg:hidden fixed bottom-0 inset-x-0 z-50 bg-white border-t border-black/10"
+        >
+          <!-- Dropup rincian lengkap -->
+          <div
+            id="mobile-summary-detail"
+            class="hidden px-6 sm:px-20 md:px-32 pt-4 pb-3 border-b border-black/10"
+          >
+            <div
+              class="flex h-10 w-full shrink-0 items-center justify-between mb-3"
+            >
+              <div class="flex items-center gap-2 shrink-0">
+                <!-- icon pulsa -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  class="h-10 w-10 shrink-0"
+                >
+                  <defs>
+                    <linearGradient
+                      id="phoneGradient-mobile"
+                      x1="0%"
+                      y1="0%"
+                      x2="100%"
+                      y2="100%"
+                    >
+                      <stop offset="0%" stop-color="#5FB5B7" />
+                      <stop offset="100%" stop-color="#0088CE" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    fill="url(#phoneGradient-mobile)"
+                    d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                  />
+                  <path
+                    fill="url(#phoneGradient-mobile)"
+                    d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"
+                  />
+                </svg>
+                <span class="text-sm text-[#6c6c6c] whitespace-nowrap"
+                  >Pulsa</span
+                >
+              </div>
+              <img
+                id="logo-provider-mobile"
+                class="h-full w-fit shrink-0 object-contain hidden"
+                src="/assets/images/Logo-XL.svg"
+                alt="Logo XL"
+              />
+            </div>
+
+            <div class="flex justify-between text-sm mt-3">
+              <span class="text-sm text-[#6c6c6c]">Layanan</span>
+              <span id="service-nama-mobile" class="font-medium"></span>
+            </div>
+
+            <div
+              id="nama-provider-mobile"
+              class="flex justify-between text-sm mt-3 hidden"
+            >
+              <span class="text-sm text-[#6c6c6c]">Provider</span>
+              <span class="font-medium">XL</span>
+            </div>
+
+            <div class="flex justify-between mt-3 text-sm">
+              <span class="text-sm text-[#6c6c6c]">Nomor Tujuan</span>
+              <span id="detail-nomor-mobile" class="font-medium">-</span>
+            </div>
+          </div>
+
+          <div
+            class="px-6 sm:px-20 md:px-32 xl:px-40 2xl:px-60 py-3 flex items-center gap-3"
+          >
+            <button
+              id="btn-toggle-detail"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobile-summary-detail"
+              class="flex flex-col items-start flex-1 min-w-0 text-left"
+            >
+              <span class="flex items-center gap-1 text-xs text-[#6c6c6c]">
+                Lihat rincian
+                <svg
+                  id="detail-chevron"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="10"
+                  height="10"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  class="transition-transform duration-200"
+                >
+                  <path d="M8 5l5 5H3z" />
+                </svg>
+              </span>
+              <span id="detail-nominal-mobile" class="text-base font-semibold">
+                Pilih Nominal
+              </span>
+            </button>
+
+            <a
+              href="metode-pembayaran.html"
+              id="btn-lanjut-mobile"
+              data-active="false"
+              aria-disabled="true"
+              tabindex="-1"
+              class="shrink-0 flex justify-center items-center px-5 py-3 rounded-xl font-medium text-sm bg-gray-200 text-gray-400 cursor-not-allowed hover:-translate-y-0.5 hover:shadow-md duration-200 data-[active=true]:bg-linear-to-r data-[active=true]:from-biru data-[active=true]:to-hijau data-[active=true]:text-white data-[active=true]:cursor-pointer data-[active=false]:pointer-events-none"
+            >
+              Pilih Metode Pembayaran
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION TUTORIAL TOP UP -->
+      <section class="px-6 sm:px-20 md:px-32 lg:px-20 xl:px-40 2xl:px-60 py-10">
+        <div>
+          <h2 class="text-2xl font-semibold mb-1">Cara Beli Pulsa</h2>
+          <span class="text-[#6c6c6c]">
+            Ikuti langkah mudah untuk pengisian pulsa reguler ke semua operator
+            seluler.
+          </span>
+        </div>
+
+        <div class="mt-6 grid lg:grid-cols-2 gap-3">
+          <!-- Langkah 1 -->
+          <div
+            class="border border-black/20 rounded-2xl flex items-center gap-3 p-4 w-full bg-gray-100"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="bg-linear-to-r text-white font-medium text-sm from-biru to-hijau h-9 w-9 rounded-full flex items-center justify-center shrink-0"
+              >
+                1
+              </div>
+              <div class="flex flex-col">
+                <span class="font-medium text-sm text-[#6c6c6c]"
+                  >Langkah 1</span
+                >
+                <span class="font-semibold text-base">Masukkan Nomor HP</span>
+                <span class="text-[#6c6c6c] text-sm">
+                  Ketik nomor seluler tujuan Anda. Sistem akan mendeteksi
+                  operator secara otomatis.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Langkah 2 -->
+          <div
+            class="border border-black/20 rounded-2xl flex items-center gap-3 p-4 w-full bg-gray-100"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="bg-linear-to-r text-white font-medium text-sm from-biru to-hijau h-9 w-9 rounded-full flex items-center justify-center shrink-0"
+              >
+                2
+              </div>
+              <div class="flex flex-col">
+                <span class="font-medium text-sm text-[#6c6c6c]"
+                  >Langkah 2</span
+                >
+                <span class="font-semibold text-base">Pilih Nominal Pulsa</span>
+                <span class="text-[#6c6c6c] text-sm">
+                  Pilih besaran nominal pulsa yang ingin Anda beli sesuai dengan
+                  kebutuhan.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Langkah 3 -->
+          <div
+            class="border border-black/20 rounded-2xl flex items-center gap-3 p-4 w-full bg-gray-100"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="bg-linear-to-r text-white font-medium text-sm from-biru to-hijau h-9 w-9 rounded-full flex items-center justify-center shrink-0"
+              >
+                3
+              </div>
+              <div class="flex flex-col">
+                <span class="font-medium text-sm text-[#6c6c6c]"
+                  >Langkah 3</span
+                >
+                <span class="font-semibold text-base"
+                  >Pilih Metode Pembayaran</span
+                >
+                <span class="text-[#6c6c6c] text-sm">
+                  Gunakan e-wallet, saldo akun, transfer bank, atau saluran
+                  pembayaran pilihan Anda.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Langkah 4 -->
+          <div
+            class="border border-black/20 rounded-2xl flex items-center gap-3 p-4 w-full bg-gray-100"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="bg-linear-to-r text-white font-medium text-sm from-biru to-hijau h-9 w-9 rounded-full flex items-center justify-center shrink-0"
+              >
+                4
+              </div>
+              <div class="flex flex-col">
+                <span class="font-medium text-sm text-[#6c6c6c]"
+                  >Langkah 4</span
+                >
+                <span class="font-semibold text-base"
+                  >Selesaikan Pembayaran</span
+                >
+                <span class="text-[#6c6c6c] text-sm">
+                  Instruksikan transaksi sesuai petunjuk yang tertera sampai
+                  muncul notifikasi sukses.
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Langkah 5 -->
+          <div
+            class="border border-black/20 rounded-2xl flex items-center gap-3 p-4 w-full bg-gray-100"
+          >
+            <div class="flex items-start gap-4">
+              <div
+                class="bg-linear-to-r text-white font-medium text-sm from-biru to-hijau h-9 w-9 rounded-full flex items-center justify-center shrink-0"
+              >
+                5
+              </div>
+              <div class="flex flex-col">
+                <span class="font-medium text-sm text-[#6c6c6c]"
+                  >Langkah 5</span
+                >
+                <span class="font-semibold text-base"
+                  >Pulsa Berhasil Bertambah</span
+                >
+                <span class="text-[#6c6c6c] text-sm">
+                  Pulsa akan langsung masuk ke nomor HP beserta perpanjangan
+                  masa aktif dari provider.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION TIPS -->
+      <section class="px-6 sm:px-20 md:px-32 lg:px-20 xl:px-40 2xl:px-60 py-10">
+        <div>
+          <h2 class="text-2xl font-semibold mb-1">Tips Isi Ulang Pulsa</h2>
+          <span class="text-[#6c6c6c]">
+            Perhatikan beberapa panduan praktis berikut agar transaksi pengisian
+            pulsa berjalan lancar.
+          </span>
+        </div>
+
+        <div class="mt-6 grid md:grid-cols-2 gap-3">
+          <div
+            class="border border-black/20 rounded-2xl flex items-center gap-3 p-4 w-full bg-gray-100"
+          >
+            <div class="flex flex-col">
+              <span
+                class="font-semibold text-base bg-linear-to-r from-biru to-hijau bg-clip-text text-transparent"
+              >
+                Tips 1
+              </span>
+              <span class="font-medium text-base mt-2"
+                >Cek Kembali Digit Nomor HP</span
+              >
+              <span class="text-[#6c6c6c] text-sm">
+                Selalu pastikan nomor HP yang dimasukkan sudah benar agar pulsa
+                tidak salah terisi ke nomor orang lain.
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="border border-black/20 rounded-2xl flex items-center gap-3 p-4 w-full bg-gray-100"
+          >
+            <div class="flex flex-col">
+              <span
+                class="font-semibold text-base bg-linear-to-r from-biru to-hijau bg-clip-text text-transparent"
+              >
+                Tips 2
+              </span>
+              <span class="font-medium text-base mt-2"
+                >Perhatikan Masa Aktif Kartu</span
+              >
+              <span class="text-[#6c6c6c] text-sm">
+                Lakukan isi ulang sebelum masa tenggang berakhir untuk mencegah
+                nomor hangus dan kartu terblokir permanen.
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="border border-black/20 rounded-2xl flex items-center gap-3 p-4 w-full bg-gray-100"
+          >
+            <div class="flex flex-col">
+              <span
+                class="font-semibold text-base bg-linear-to-r from-biru to-hijau bg-clip-text text-transparent"
+              >
+                Tips 3
+              </span>
+              <span class="font-medium text-base mt-2"
+                >Pahami Perpanjangan Masa Aktif</span
+              >
+              <span class="text-[#6c6c6c] text-sm">
+                Setiap nominal pulsa memiliki durasi penambahan masa aktif yang
+                berbeda-beda tergantung aturan provider.
+              </span>
+            </div>
+          </div>
+
+          <div
+            class="border border-black/20 rounded-2xl flex items-center gap-3 p-4 w-full bg-gray-100"
+          >
+            <div class="flex flex-col">
+              <span
+                class="font-semibold text-base bg-linear-to-r from-biru to-hijau bg-clip-text text-transparent"
+              >
+                Tips 4
+              </span>
+              <span class="font-medium text-base mt-2"
+                >Simpan Bukti Transaksi</span
+              >
+              <span class="text-[#6c6c6c] text-sm">
+                Simpan resi transaksi digital sebagai bukti validasi apabila
+                terjadi keterlambatan masuknya pulsa dari operator.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION TOP UP LAINNYA -->
+      <section class="px-6 sm:px-20 md:px-32 lg:px-20 xl:px-40 2xl:px-60 py-10">
+        <div>
+          <h2 class="text-2xl font-semibold mb-1">
+            Top Up & Bayar Layanan Lainnya
+          </h2>
+          <span class="text-[#6c6c6c]">
+            Nikmati kemudahan transaksi untuk berbagai kebutuhan Anda.
+          </span>
+        </div>
+
+        <div class="border border-black/20 mt-6 rounded-2xl">
+          <div>
+            <div
+              class="px-6 py-3 rounded-t-2xl bg-gray-100 flex flex-col md:flex-row items-start md:items-center justify-between"
+            >
+              <span class="font-semibold">E-Wallet</span>
+              <span class="text-[#6c6c6c] text-sm"
+                >Pilih e-wallet yang ingin kamu isi ulang</span
+              >
+            </div>
+            <div
+              class="p-4 lg:p-6 grid grid-cols-2 lg:grid-cols-4 gap-3 border-b border-black/20"
+            >
+              <!-- GOPAY -->
+              <a
+                href="input-data-e-wallet.html?service=gopay"
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
+              >
+                <div
+                  class="h-10 w-full flex items-center justify-center shrink-0"
+                >
+                  <img
+                    class="w-full h-full object-contain"
+                    src="assets/images/e-wallet/Gopay.svg"
+                    alt=""
+                  />
+                </div>
+                <span class="font-medium text-[#6c6c6c]">Gopay</span>
+              </a>
+
+              <!-- DANA -->
+              <a
+                href="input-data-e-wallet.html?service=dana"
+                class="wallet-card flex-col gap-3 relative w-full h-[120px] px-3 py-6 flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
+              >
+                <div
+                  class="h-10 w-full flex items-center justify-center shrink-0"
+                >
+                  <img
+                    class="w-full h-full object-contain"
+                    src="assets/images/e-wallet/Dana.svg"
+                    alt=""
+                  />
+                </div>
+                <span class="font-medium text-[#6c6c6c]">DANA</span>
+              </a>
+
+              <!-- OVO -->
+              <a
+                href="input-data-e-wallet.html?service=ovo"
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
+              >
+                <div
+                  class="h-10 w-full flex items-center justify-center shrink-0"
+                >
+                  <img
+                    class="w-full h-full object-contain"
+                    src="assets/images/e-wallet/OVO.svg"
+                    alt=""
+                  />
+                </div>
+                <span class="font-medium text-[#6c6c6c]">OVO</span>
+              </a>
+
+              <!-- SHOPEEPAY -->
+              <a
+                href="input-data-e-wallet.html?service=shopeepay"
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
+              >
+                <div
+                  class="h-10 w-full flex items-center justify-center shrink-0"
+                >
+                  <img
+                    class="w-full h-full object-contain"
+                    src="assets/images/e-wallet/ShopeePay.svg"
+                    alt=""
+                  />
+                </div>
+                <span class="font-medium text-[#6c6c6c]">Shopeepay</span>
+              </a>
+            </div>
+
+            <div
+              class="px-6 py-3 bg-gray-100 flex flex-col md:flex-row items-start md:items-center justify-between"
+            >
+              <span class="font-semibold">Lainnya</span>
+              <span class="text-[#6c6c6c] text-sm"
+                >Token listrik, paket data, dan pulsa</span
+              >
+            </div>
+            <div
+              class="p-4 lg:p-6 grid grid-cols-2 lg:grid-cols-4 items-stretch gap-3"
+            >
+              <!-- TOKEN LISTRIK -->
+              <a
+                href="input-data-pln.html?service=pln"
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
+              >
+                <div
+                  class="h-10 w-full flex items-center justify-center shrink-0"
+                >
+                  <img
+                    class="w-full h-full object-contain"
+                    src="assets/images/PLN.svg"
+                    alt=""
+                  />
+                </div>
+                <span class="font-medium text-[#6c6c6c] text-center"
+                  >Token Listrik</span
+                >
+              </a>
+
+              <!-- BPJS -->
+              <a
+                href="input-data-bpjs.html?service=bpjs"
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
+              >
+                <div
+                  class="h-10 w-full flex items-center justify-center shrink-0"
+                >
+                  <img
+                    class="w-full h-full object-contain"
+                    src="assets/images/BPJS.svg"
+                    alt=""
+                  />
+                </div>
+                <span class="font-medium text-[#6c6c6c] text-center"
+                  >BPJS Kesehatan</span
+                >
+              </a>
+
+              <!-- PAKET DATA -->
+              <a
+                href="input-data-paket-data.html?service=paket_data"
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
+              >
+                <div
+                  class="h-10 w-full flex items-center justify-center shrink-0"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    class="w-full h-full object-contain"
+                  >
+                    <defs>
+                      <linearGradient
+                        id="phoneGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                      >
+                        <stop offset="0%" stop-color="#5FB5B7" />
+                        <stop offset="100%" stop-color="#0088CE" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      fill="url(#phoneGradient)"
+                      d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.44 12.44 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.52.52 0 0 0 .668.05A11.45 11.45 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049"
+                    />
+                    <path
+                      fill="url(#phoneGradient)"
+                      d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.46 9.46 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065m-2.183 2.183c.226-.226.185-.605-.1-.75A6.5 6.5 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.5 5.5 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091zM9.06 12.44c.196-.196.198-.52-.04-.66A2 2 0 0 0 8 11.5a2 2 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"
+                    />
+                  </svg>
+                </div>
+                <span class="font-medium text-[#6c6c6c] text-center"
+                  >Paket Data</span
+                >
+              </a>
+
+              <!-- PULSA -->
+              <a
+                href="input-data-pulsa.html?service=pulsa"
+                class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
+              >
+                <div
+                  class="h-10 w-full flex items-center justify-center shrink-0"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    class="shrink-0 w-full h-full object-contain"
+                  >
+                    <defs>
+                      <linearGradient
+                        id="phoneGradient"
+                        x1="0%"
+                        y1="0%"
+                        x2="100%"
+                        y2="100%"
+                      >
+                        <stop offset="0%" stop-color="#5FB5B7" />
+                        <stop offset="100%" stop-color="#0088CE" />
+                      </linearGradient>
+                    </defs>
+                    <path
+                      fill="url(#phoneGradient)"
+                      d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"
+                    />
+                    <path
+                      fill="url(#phoneGradient)"
+                      d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2"
+                    />
+                  </svg>
+                </div>
+                <span class="font-medium text-[#6c6c6c]">Pulsa</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION FAQS -->
+      <section class="px-6 sm:px-20 md:px-32 lg:px-20 xl:px-40 2xl:px-60 py-10">
+        <div>
+          <h2 class="text-2xl font-semibold mb-1">
+            Pertanyaan Seputar Isi Pulsa
+          </h2>
+          <span class="text-[#6c6c6c]"
+            >Temukan jawaban atas pertanyaan umum seputar pengisian pulsa
+            seluler.</span
+          >
+        </div>
+
+        <div class="grid grid-cols-1 gap-3 mt-6">
+          <!-- FAQS 1 -->
+          <div class="accordion-item">
+            <div class="wrapper p-1">
+              <div
+                class="header flex items-center justify-between px-6 py-3 rounded-2xl cursor-pointer hover:bg-gray-100 duration-200"
+                onclick="toggleAccordion(this)"
+              >
+                <span class="font-medium">
+                  Berapa lama waktu proses pengisian pulsa sampai masuk?
+                </span>
+                <span class="icon text-xl font-medium">+</span>
+              </div>
+              <div
+                class="content px-6 py-3 text-sm text-[#6c6c6c] rounded-b-2xl"
+              >
+                <p>
+                  Proses pengisian pulsa diproses secara instan dan umumnya
+                  masuk ke nomor Anda dalam waktu 1-3 menit setelah pembayaran
+                  terverifikasi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQS 2 -->
+          <div class="accordion-item">
+            <div class="wrapper p-1">
+              <div
+                class="header flex items-center justify-between px-6 py-3 rounded-2xl cursor-pointer hover:bg-gray-100 duration-200"
+                onclick="toggleAccordion(this)"
+              >
+                <span class="font-medium">
+                  Apakah membeli pulsa dapat menambah masa aktif kartu?
+                </span>
+                <span class="icon text-xl font-medium">+</span>
+              </div>
+              <div
+                class="content px-6 py-3 text-sm text-[#6c6c6c] rounded-b-2xl"
+              >
+                <p>
+                  Ya, setiap isi ulang pulsa reguler akan menambah masa aktif
+                  kartu sesuai dengan skema besaran nominal yang ditentukan oleh
+                  masing-masing operator.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQS 3 -->
+          <div class="accordion-item">
+            <div class="wrapper p-1">
+              <div
+                class="header flex items-center justify-between px-6 py-3 rounded-2xl cursor-pointer hover:bg-gray-100 duration-200"
+                onclick="toggleAccordion(this)"
+              >
+                <span class="font-medium">
+                  Bagaimana jika pulsa belum masuk padahal status transaksi
+                  sudah berhasil?
+                </span>
+                <span class="icon text-xl font-medium">+</span>
+              </div>
+              <div
+                class="content px-6 py-3 text-sm text-[#6c6c6c] rounded-b-2xl"
+              >
+                <p>
+                  Cek saldo secara manual via dial UMB atau aplikasi operator.
+                  Apabila saldo tetap belum bertambah setelah 15 menit, hubungi
+                  Customer Service kami dengan menyertakan ID Transaksi.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQS 4 -->
+          <div class="accordion-item">
+            <div class="wrapper p-1">
+              <div
+                class="header flex items-center justify-between px-6 py-3 rounded-2xl cursor-pointer hover:bg-gray-100 duration-200"
+                onclick="toggleAccordion(this)"
+              >
+                <span class="font-medium">
+                  Apakah pulsa bisa diisikan ke nomor yang sedang dalam masa
+                  tenggang?
+                </span>
+                <span class="icon text-xl font-medium">+</span>
+              </div>
+              <div
+                class="content px-6 py-3 text-sm text-[#6c6c6c] rounded-b-2xl"
+              >
+                <p>
+                  Bisa. Mengisi pulsa reguler pada nomor yang berada dalam masa
+                  tenggang justru akan mengembalikan status kartu menjadi aktif
+                  kembali.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQS 5 -->
+          <div class="accordion-item">
+            <div class="wrapper p-1">
+              <div
+                class="header flex items-center justify-between px-6 py-3 rounded-2xl cursor-pointer hover:bg-gray-100 duration-200"
+                onclick="toggleAccordion(this)"
+              >
+                <span class="font-medium">
+                  Apakah nomor pascabayar bisa diisi pulsa reguler?
+                </span>
+                <span class="icon text-xl font-medium">+</span>
+              </div>
+              <div
+                class="content px-6 py-3 text-sm text-[#6c6c6c] rounded-b-2xl"
+              >
+                <p>
+                  Tidak bisa. Pengisian pulsa reguler di halaman ini khusus
+                  ditujukan untuk pengguna kartu prabayar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="px-6 sm:px-20 md:px-32 lg:px-20 xl:px-40 2xl:px-60 pt-10 bg-hitam text-white"
+    >
+      <div
+        class="flex flex-col md:flex-row items-start gap-10 md:items-center justify-between"
+      >
+        <div>
+          <img
+            class="w-44 h-auto"
+            src="assets/images/logo_suara.com putih.png"
+            alt="Logo Suara"
+          />
+          <span class=""
+            >Semua urusan top up dan bayar tagihan jadi lebih mudah di
+            sini.</span
+          >
+        </div>
+        <div class="flex flex-col gap-2">
+          <span class="font-medium text-base">Powered By</span
+          ><img class="w-24 h-auto" src="assets/images/Xendit.svg" alt="" />
+        </div>
+      </div>
+      <div class="border border-white/30 my-8"></div>
+      <div
+        class="grid grid-cols-2 lg:flex lg:flex-row items-start justify-between gap-10"
+      >
+        <ul class="flex flex-col gap-3 lg:max-w-[350px] text-gray-300 text-sm">
+          <li class="font-medium text-white text-base">Kontak</li>
+          <li class="flex items-start gap-3">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-geo-alt-fill shrink-0 mt-1"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+              />
+            </svg>
+
+            Gedung P46 Lantai 1, Jalan Palmerah Utara No.46, RT.2/RW.6, Jakarta
+            Barat 11480
+          </li>
+
+          <li>
+            <a
+              href=""
+              class="flex items-start gap-3 hover:text-white duration-200"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-telephone-fill shrink-0 mt-1"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+                />
+              </svg>
+              081234567890</a
+            >
+          </li>
+        </ul>
+
+        <ul class="flex flex-col ml-auto lg:ml-0 gap-3 text-gray-300 text-sm">
+          <li class="font-medium text-white text-base">Bantuan</li>
+          <li>
+            <a href="faqs.html" class="hover:text-white duration-200">FAQ</a>
+          </li>
+          <li>
+            <a
+              href="syarat-dan-ketentuan.html"
+              class="hover:text-white duration-200"
+              >Syarat & Ketentuan</a
+            >
+          </li>
+          <li>
+            <a
+              href="kebijakan-privasi.html"
+              class="hover:text-white duration-200"
+              >Kebijakan Privasi</a
+            >
+          </li>
+        </ul>
+
+        <ul class="flex flex-col gap-3 text-gray-300 text-sm">
+          <li class="font-medium text-white text-base">Layanan</li>
+          <li>
+            <a
+              href="input-data-e-wallet.html?service=gopay"
+              class="hover:text-white duration-200"
+              >Top Up Gopay</a
+            >
+          </li>
+          <li>
+            <a
+              href="input-data-e-wallet.html?service=dana"
+              class="hover:text-white duration-200"
+              >Top Up Dana</a
+            >
+          </li>
+          <li>
+            <a
+              href="input-data-e-wallet.html?service=ovo"
+              class="hover:text-white duration-200"
+              >Top Up OVO</a
+            >
+          </li>
+          <li>
+            <a
+              href="input-data-e-wallet.html?service=shopeepay"
+              class="hover:text-white duration-200"
+              >Top Up Shopee Pay</a
+            >
+          </li>
+          <li>
+            <a
+              href="input-data-e-wallet.html?service=pln"
+              class="hover:text-white duration-200"
+              >Token Listrik</a
+            >
+          </li>
+          <li>
+            <a
+              href="input-data-e-wallet.html?service=paket_data"
+              class="hover:text-white duration-200"
+              >Paket Data</a
+            >
+          </li>
+          <li>
+            <a
+              href="input-data-e-wallet.html?service=pulsa"
+              class="hover:text-white duration-200"
+              >Pulsa</a
+            >
+          </li>
+        </ul>
+
+        <ul class="flex flex-col ml-auto lg:ml-0 gap-3 text-gray-300 text-sm">
+          <li class="font-medium text-white text-base">Ikuti Kami</li>
+          <li class="flex items-center gap-2">
+            <a
+              href="#"
+              class="flex items-center justify-center p-3 rounded-lg bg-gray-600/20 hover:text-white hover:bg-gray-500/30 duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-instagram"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="#"
+              class="flex items-center justify-center p-3 rounded-lg bg-gray-600/20 hover:text-white hover:bg-gray-500/30 duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-tiktok"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="#"
+              class="flex items-center justify-center p-3 rounded-lg bg-gray-600/20 hover:text-white hover:bg-gray-500/30 duration-300"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-twitter-x"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="border border-white/30 mt-8"></div>
+      <div class="text-center justify-center items-center py-4">
+        <span class="text-sm text-gray-300 text-center"
+          >© 2026 Top Up Suara.com. All rights reserved.</span
+        >
+      </div>
+    </footer>
+
+    <script src="/data/layanan-config.js"></script>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const service = params.get("service");
+      const layanan = LAYANAN_CONFIG[service]; // ambil dari file layanan-config.js yang udah di-load
+      if (layanan) {
+        document.getElementById("service-nama").textContent = layanan.nama;
+        document.getElementById("service-nama-mobile").textContent =
+          layanan.nama;
+      }
+    </script>
+    <script>
+      const walletCards = document.querySelectorAll(".wallet-card");
+
+      walletCards.forEach((card) => {
+        card.addEventListener("click", () => {
+          // Hapus selected dari semua card
+          walletCards.forEach((item) => {
+            item.classList.remove("selected");
+          });
+
+          // Tambahkan selected ke card yang diklik
+          card.classList.add("selected");
+        });
+      });
+    </script>
+
+    <script>
+      function toggleAccordion(header) {
+        header.closest(".wrapper").classList.toggle("is-open");
+      }
+    </script>
+
+    <script>
+      const walletCards2 = document.querySelectorAll(".wallet-card");
+      const inputNomor = document.getElementById("nomor-tujuan");
+      const detailNomor = document.getElementById("detail-nomor");
+      const detailNominal = document.getElementById("detail-nominal");
+      const btnLanjut = document.getElementById("btn-lanjut");
+      const nominalWarning = document.getElementById("nominal-warning");
+      const nominalGrid = document.getElementById("nominal-grid");
+      const logoProvider = document.getElementById("logo-provider");
+      const namaProvider = document.getElementById("nama-provider");
+
+      const detailChevron = document.getElementById("detail-chevron");
+
+      const namaProviderMobile = document.getElementById(
+        "nama-provider-mobile",
+      );
+      const logoProviderMobile = document.getElementById(
+        "logo-provider-mobile",
+      );
+
+      const detailNomorMobile = document.getElementById("detail-nomor-mobile");
+      const detailNominalMobile = document.getElementById(
+        "detail-nominal-mobile",
+      );
+      const btnLanjutMobile = document.getElementById("btn-lanjut-mobile");
+      const btnToggleDetail = document.getElementById("btn-toggle-detail");
+      const mobileSummaryDetail = document.getElementById(
+        "mobile-summary-detail",
+      );
+      let selectedAmount = null;
+      const SERVICE_KEY = "pulsa";
+      function formatRupiah(angka) {
+        return "Rp " + Number(angka).toLocaleString("id-ID");
+      }
+
+      function updateLanjutHref(btn) {
+        if (selectedAmount === null) return;
+
+        const nomor = inputNomor.value.trim();
+        const namaProvider = "XL"; // dummy, sesuaikan kalau nanti ada API cek nama
+
+        const query = new URLSearchParams({
+          service: SERVICE_KEY,
+          nomor: nomor,
+          amount: selectedAmount,
+          namaProvider: namaProvider,
+        });
+
+        btn.href = `metode-pembayaran.html?${query.toString()}`;
+      }
+
+      function toggleNominalSection() {
+        const isValidNomor = inputNomor.value.trim().length > 0;
+
+        nominalWarning.classList.toggle("hidden", isValidNomor);
+        nominalGrid.classList.toggle("hidden", !isValidNomor);
+        logoProvider.classList.toggle("hidden", !isValidNomor);
+        namaProvider.classList.toggle("hidden", !isValidNomor);
+
+        logoProviderMobile.classList.toggle("hidden", !isValidNomor);
+        namaProviderMobile.classList.toggle("hidden", !isValidNomor);
+
+        if (!isValidNomor && selectedAmount !== null) {
+          walletCards2.forEach((item) => item.classList.remove("selected"));
+          selectedAmount = null;
+          detailNominal.textContent = "-";
+          detailNominalMobile.textContent = "Pilih Nominal";
+        }
+      }
+      function updateButtonState() {
+        const nomorValid = inputNomor.value.trim().length > 0;
+        const nominalValid = selectedAmount !== null;
+        const isValid = nomorValid && nominalValid;
+
+        [btnLanjut, btnLanjutMobile].forEach((btn) => {
+          btn.dataset.active = isValid;
+          if (isValid) {
+            btn.removeAttribute("aria-disabled");
+            btn.removeAttribute("tabindex");
+            updateLanjutHref(btn);
+          } else {
+            btn.setAttribute("aria-disabled", "true");
+            btn.setAttribute("tabindex", "-1");
+          }
+        });
+      }
+      walletCards2.forEach((card) => {
+        card.addEventListener("click", () => {
+          walletCards2.forEach((item) => item.classList.remove("selected"));
+          card.classList.add("selected");
+
+          selectedAmount = card.dataset.amount;
+          detailNominal.textContent = formatRupiah(selectedAmount);
+          detailNominalMobile.textContent = formatRupiah(selectedAmount);
+
+          updateButtonState();
+        });
+      });
+
+      inputNomor.addEventListener("input", () => {
+        const nomor = inputNomor.value.trim() || "-";
+        detailNomor.textContent = nomor;
+        detailNomorMobile.textContent = nomor;
+        toggleNominalSection();
+        updateButtonState();
+      });
+
+      btnToggleDetail.addEventListener("click", () => {
+        const isOpen = !mobileSummaryDetail.classList.contains("hidden");
+        mobileSummaryDetail.classList.toggle("hidden");
+        btnToggleDetail.setAttribute("aria-expanded", String(!isOpen));
+        detailChevron.classList.toggle("rotate-180", !isOpen);
+      });
+
+      function toggleAccordion(header) {
+        header.closest(".wrapper").classList.toggle("is-open");
+      }
+
+      [btnLanjut, btnLanjutMobile].forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          if (btn.dataset.active !== "true") {
+            e.preventDefault();
+          }
+        });
+      });
+      // jalankan sekali saat halaman dimuat
+      toggleNominalSection();
+      updateButtonState();
+    </script>
+  </body>
+</html>
