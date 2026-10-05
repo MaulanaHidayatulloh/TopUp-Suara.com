@@ -3,7 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Top up pulsa, paket data, saldo e-wallet, token PLN, dan bayar BPJS dengan mudah, cepat, dan aman di Suara.com. Pilih layanan, bayar, langsung sukses."
+    />
     <title>Top Up Suara</title>
+    <link
+      rel="preload"
+      href="assets/fonts/geist-latin-wght-normal.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
     <link rel="stylesheet" href="assets/css/output.css" />
   </head>
   <body>
@@ -13,7 +24,7 @@
       <nav class="flex items-center py-4 justify-between relative">
         <img
           class="w-36 h-auto"
-          src="assets/images/logo_suara.com putih.png"
+          src="assets/images/logo_suara.com putih.webp"
           alt="Logo Suara"
         />
 
@@ -97,11 +108,18 @@
           </span>
         </div>
 
-        <img
-          class="w-[300px] lg:w-[350px]"
-          src="assets/images/mockup-hero2.png"
-          alt=""
-        />
+        <div
+          class="flex justify-center items-center w-[300px] lg:w-[350px] shrink-0"
+        >
+          <img
+            fetchpriority="high"
+            width="350"
+            height="306"
+            class="w-full h-auto"
+            src="assets/images/mockup-hero2.webp"
+            alt="Tampilan aplikasi top up pulsa, paket data, e-wallet, dan PLN di Suara.com"
+          />
+        </div>
       </div>
     </header>
 
@@ -134,7 +152,7 @@
                 class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
               >
                 <div
-                  class="h-10 w-full flex items-center justify-center shrink-0"
+                  class="h-6 w-full px-4 flex items-center justify-center shrink-0"
                 >
                   <img
                     class="w-full h-full object-contain"
@@ -152,7 +170,7 @@
                 class="wallet-card flex-col gap-3 relative w-full h-[120px] px-3 py-6 flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
               >
                 <div
-                  class="h-10 w-full flex items-center justify-center shrink-0"
+                  class="h-7 w-full px-4 flex items-center justify-center shrink-0"
                 >
                   <img
                     class="w-full h-full object-contain"
@@ -170,7 +188,7 @@
                 class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
               >
                 <div
-                  class="h-10 w-full flex items-center justify-center shrink-0"
+                  class="h-5.5 w-full px-4 flex items-center justify-center shrink-0"
                 >
                   <img
                     class="w-full h-full object-contain"
@@ -188,7 +206,7 @@
                 class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
               >
                 <div
-                  class="h-10 w-full flex items-center justify-center shrink-0"
+                  class="h-7 w-full px-2 lg:px-4 flex items-center justify-center shrink-0"
                 >
                   <img
                     class="w-full h-full object-contain"
@@ -218,7 +236,7 @@
                 class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
               >
                 <div
-                  class="h-10 w-full flex items-center justify-center shrink-0"
+                  class="h-7 w-full px-4 flex items-center justify-center shrink-0"
                 >
                   <img
                     class="w-full h-full object-contain"
@@ -238,7 +256,7 @@
                 class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
               >
                 <div
-                  class="h-10 w-full flex items-center justify-center shrink-0"
+                  class="h-7 w-full lg:px-4 flex items-center justify-center shrink-0"
                 >
                   <img
                     class="w-full h-full object-contain"
@@ -258,7 +276,7 @@
                 class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
               >
                 <div
-                  class="h-10 w-full flex items-center justify-center shrink-0"
+                  class="h-7 w-full px-4 flex items-center justify-center shrink-0"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -300,7 +318,7 @@
                 class="wallet-card flex-col gap-3 relative w-full px-3 py-6 h-[120px] flex justify-center items-center rounded-2xl cursor-pointer hover:-translate-y-0.5 hover:shadow-md duration-200"
               >
                 <div
-                  class="h-10 w-full flex items-center justify-center shrink-0"
+                  class="h-7 w-full px-4 flex items-center justify-center shrink-0"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -478,7 +496,7 @@
                   <span class="font-semibold text-lg">1</span>
                 </div>
 
-                <p class="text-sm text-gray-400 mb-1">Langkah 1</p>
+                <p class="text-sm text-[#6c6c6c] mb-1">Langkah 1</p>
                 <h3 class="font-semibold text-gray-900 mb-1">Pilih Layanan</h3>
                 <p class="text-gray-600 text-sm">
                   Pilih layanan yang ingin kamu bayar atau top up.
@@ -492,7 +510,7 @@
                 >
                   <span class="font-semibold text-lg">2</span>
                 </div>
-                <p class="text-sm text-gray-400 mb-1">Langkah 2</p>
+                <p class="text-sm text-[#6c6c6c] mb-1">Langkah 2</p>
                 <h3 class="font-semibold text-gray-900 mb-1">
                   Masukkan Nomor Tujuan
                 </h3>
@@ -509,7 +527,7 @@
                 >
                   <span class="font-semibold text-lg">3</span>
                 </div>
-                <p class="text-sm text-gray-400 mb-1">Langkah 3</p>
+                <p class="text-sm text-[#6c6c6c] mb-1">Langkah 3</p>
                 <h3 class="font-semibold text-gray-900 mb-1">
                   Pilih Nominal & Bayar
                 </h3>
@@ -526,7 +544,7 @@
                 >
                   <span class="font-semibold text-lg">4</span>
                 </div>
-                <p class="text-sm text-gray-400 mb-1">Langkah 4</p>
+                <p class="text-sm text-[#6c6c6c] mb-1">Langkah 4</p>
                 <h3 class="font-semibold text-gray-900 mb-1">
                   Transaksi Berhasil
                 </h3>
@@ -634,7 +652,7 @@
         <div>
           <img
             class="w-44 h-auto"
-            src="assets/images/logo_suara.com putih.png"
+            src="assets/images/logo_suara.com putih.webp"
             alt="Logo Suara"
           />
           <span class=""
@@ -773,6 +791,7 @@
           <li class="flex items-center gap-2">
             <a
               href="#"
+              aria-label="Instagram"
               class="flex items-center justify-center p-3 rounded-lg bg-gray-600/20 hover:text-white hover:bg-gray-500/30 duration-300"
             >
               <svg
@@ -791,6 +810,7 @@
 
             <a
               href="#"
+              aria-label="TikTok"
               class="flex items-center justify-center p-3 rounded-lg bg-gray-600/20 hover:text-white hover:bg-gray-500/30 duration-300"
             >
               <svg
@@ -809,6 +829,7 @@
 
             <a
               href="#"
+              aria-label="X-Twitter"
               class="flex items-center justify-center p-3 rounded-lg bg-gray-600/20 hover:text-white hover:bg-gray-500/30 duration-300"
             >
               <svg
